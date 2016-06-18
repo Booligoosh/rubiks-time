@@ -181,7 +181,7 @@ function statsClicked() {
 
 function solvesList() {
   solvesListLoop = -1;
-  while (solvesListLoop < solves.length) {
+  while (solvesListLoop < solves.length - 1) {
     solvesListLoop = solvesListLoop + 1;
     addToSolvesDisplay(solves[solvesListLoop]);
   }
@@ -193,7 +193,7 @@ function addToSolvesDisplay(data) {
   var t = document.createTextNode(data);
   h2.appendChild(t);
   document.getElementById("solveslist").appendChild(h2);
-  document.getElementById("solvescount").innerHTML = solves.length + "solves so far.";
+  document.getElementById("solvescount").innerHTML = solves.length + " solves so far.";
 }
 
 function iPlus() {
