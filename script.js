@@ -31,6 +31,7 @@ function showScreen2() {
   document.getElementById("screen2").style.display = "block";
   document.getElementById("screen3").style.display = "none";
 }
+
 function showScreen3() {
   document.getElementById("screen1").style.display = "none";
   document.getElementById("screen2").style.display = "none";
@@ -62,7 +63,7 @@ function startSolve() {
   solveSecondsRaw = solve / 100;
   solveHundredthsRaw = (solveSecondsRaw - solveSeconds) * 100;
   solveHundredths = Math.floor(solveHundredthsRaw);
-  document.getElementById("numbers").innerHTML = solveMinutes.toString() + ":" + solveSeconds.toString() + ":" + solveHundredths.toString();
+  document.getElementById("numbers").innerHTML = solveMinutes + ":" + solveSeconds + ":" + solveHundredths;
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
