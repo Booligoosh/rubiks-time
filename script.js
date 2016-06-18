@@ -3,8 +3,10 @@ var startUp = false;
 var inspectionStarted = false;
 var solveStarted = false;
 var inspection;
+var inspectionInterval;
 var inspectionTimer;
 var solve;
+var solveInterval;
 var solveTimer;
 
 function showScreen1() {
@@ -18,30 +20,30 @@ function showScreen2() {
 }
 
 function startInspection() {
-  var x = 1;  // 1 Second
+  inspectionInterval = 1;  // 1 Second
   inspection = inspection - 1;
   document.getElementById("numbers").innerHTML = inspection.toString();
   if (inspection === 0) {
     solve = 0;
     solveStarted = true;
-    startTimer();
+    startSolve();
     clearTimeout(inspectionTimer);
   }
-  inspectionTimer = setTimeout(startInspection, x*1000);
+  inspectionTimer = setTimeout(startInspection, inspectionInterval*1000);
 }
 
 function stopInspection() {
   clearTimeout(inspectionTimer);
 }
 
-function startTimer() {
-  var x = 1;  // 1 thousandth of a second
+function startSolve() {
+  solveInterval = 1;  // 1 thousandth of a second
   solve = solve + 1;
   document.getElementById("numbers").innerHTML = solve.toString();
-  solveTimer = setTimeout(startTimer, x);
+  solveTimer = setTimeout(startSolve, solveInterval);
 }
 
-function stopTimer() {
+function stopSolve() {
   clearTimeout(solveTimer);
 }
 
@@ -55,10 +57,10 @@ function spaceDown() {
       stopInspection();
       solve = 0;
       solveStarted = true;
-      startTimer();
+      startSolve();
     }
     if (solveStarted === true) {
-      stopTimer();
+      stopSolve();
     }
   }
 }
