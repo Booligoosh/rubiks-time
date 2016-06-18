@@ -21,6 +21,7 @@ if (document.cookie === "") {
   var solveHundredthsRaw;
   var solveInterval;
   var solveTimer;
+  var solvesListLoop;
 }
 else {
   //Normal init with cookie vars missing
@@ -43,6 +44,7 @@ else {
   var solveHundredthsRaw;
   var solveInterval;
   var solveTimer;
+  var solvesListLoop;
   //Cookie vars
   var cookiesList = document.cookie.split("|");
   var inspectionStartOn = Number(cookiesList[1]);
