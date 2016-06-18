@@ -33,6 +33,13 @@ h2 {
   top: 1em;
   right: 1em;
 }
+#stats {
+  width: 32px;
+  height: auto;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
 span h2 {
   display: inline;
   padding: 0.25em;
@@ -58,5 +65,11 @@ hr {
   display: none;
 }
 #screen3 {
+  display: none;
+}
+#screen4 {
+  display: none;
+}
+#screen5 {
   display: none;
 }
