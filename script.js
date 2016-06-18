@@ -1,24 +1,55 @@
-var startDown = false;
-var startUp = false;
-var inspectionStarted = false;
-var solveStarted = false;
-var backgroundNum = 0;
-var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "117, 117, 117"];
-var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "Grey"];
-var backgroundRGB = "229, 57, 53";
-var backgroundName = "Red";
-var inspectionStartOn = 15;
-var inspection;
-var inspectionInterval;
-var inspectionTimer;
-var solve;
-var solveMinutes;
-var solveSeconds;
-var solveHundredths;
-var solveSecondsRaw;
-var solveHundredthsRaw;
-var solveInterval;
-var solveTimer;
+if (document.cookie === "") {
+  var startDown = false;
+  var startUp = false;
+  var inspectionStarted = false;
+  var solveStarted = false;
+  var backgroundNum = 0;
+  var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "117, 117, 117"];
+  var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "Grey"];
+  var backgroundRGB = "229, 57, 53";
+  var backgroundName = "Red";
+  var solves = [];
+  var inspectionStartOn = 15;
+  var inspection;
+  var inspectionInterval;
+  var inspectionTimer;
+  var solve;
+  var solveMinutes;
+  var solveSeconds;
+  var solveHundredths;
+  var solveSecondsRaw;
+  var solveHundredthsRaw;
+  var solveInterval;
+  var solveTimer;
+}
+else {
+  var cookiesList = document.cookie.split("|");
+  var inspectionStartOn = Number(cookiesList[1]);
+  var backgroundNum = Number(cookiesList[2]);
+  var solves = cookiesList[3].split(',');
+  //Normal init with predefined vars missing
+  var startDown = false;
+  var startUp = false;
+  var inspectionStarted = false;
+  var solveStarted = false;
+  var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "117, 117, 117"];
+  var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "Grey"];
+  var backgroundRGB;
+  var backgroundName;
+  var inspection;
+  var inspectionInterval;
+  var inspectionTimer;
+  var solve;
+  var solveMinutes;
+  var solveSeconds;
+  var solveHundredths;
+  var solveSecondsRaw;
+  var solveHundredthsRaw;
+  var solveInterval;
+  var solveTimer;
+}
+
+}
 
 function showScreen1() {
   document.getElementById("screen1").style.display = "block";
@@ -69,6 +100,7 @@ function startSolve() {
 
 function stopSolve() {
   clearTimeout(solveTimer);
+  solves.push(solve);
 }
 
 function spaceDown() {
