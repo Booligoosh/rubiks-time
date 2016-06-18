@@ -177,6 +177,21 @@ function statsClicked() {
   }
 }
 
+function solvesList() {
+  solvesListLoop = -1;
+  while (solvesListLoop < solves.length) {
+    solvesListLoop = solvesListLoop + 1;
+    addToSolvesDisplay(solves[solvesListLoop]);
+  }
+}
+
+function addToSolvesDisplay(data) {
+  var h2 = document.createElement("h2");
+  var t = document.createTextNode(data);
+  h2.appendChild(t);
+  document.getElementById("solveslist").appendChild(h2);
+  document.getElementById("solvescount").innerHTML = solves.length + "solves so far.";
+}
 
 function iPlus() {
   inspectionStartOn = inspectionStartOn + 1;
@@ -218,4 +233,3 @@ function backgroundChange() {
 function updateCookies() {
     document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
 }
-
