@@ -4,7 +4,8 @@ var inspectionStarted = false;
 var solveStarted = false;
 var inspection;
 var inspectionTimer;
-
+var solve;
+var solveTimer;
 
 function startInspection() {
   var x = 1;  // 1 Second
@@ -15,6 +16,17 @@ function startInspection() {
     clearTimeout(inspectionTimer);
   }
   inspectionTimer = setTimeout(startInspection, x*1000);
+}
+
+function startTimer() {
+  var x = 1;  // 1 thousandth of a second
+  solve = solve + 1;
+  document.getElementById("numbers").innerHTML = solve.toString();
+  solveTimer = setTimeout(startTimer, x);
+}
+
+function stopTimer() {
+  clearTimeout(solveTimer);
 }
 
 function spaceDown() {
