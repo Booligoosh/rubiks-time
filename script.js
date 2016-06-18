@@ -57,7 +57,7 @@ function spaceDown() {
       solve = 0;
       solveStarted = true;
       startSolve();
-      stopInspection();
+      clearTimeout(inspectionTimer);
     }
     if (solveStarted === true) {
       stopSolve();
