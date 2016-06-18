@@ -2,6 +2,7 @@ var startDown = false;
 var startUp = false;
 var inspectionStarted = false;
 var solveStarted = false;
+var inspectionStartOn = 15;
 var inspection;
 var inspectionInterval;
 var inspectionTimer;
@@ -77,7 +78,7 @@ function spaceDown() {
 function spaceUp() {
   if (event.keyCode === 32) {
     if (startDown === true && inspectionStarted === false) {
-      inspection = 16;
+      inspection = inspectionStartOn - 1;
       inspectionStarted = true;
       startInspection();
     }
@@ -93,4 +94,14 @@ function gearClicked() {
     document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/gear.svg"
     showScreen1();
   }
+}
+
+function iPlus() {
+  inspectionStartOn = inspectionStartOn + 1;
+  document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+}
+
+function iMinus() {
+  inspectionStartOn = inspectionStartOn - 1;
+  document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
 }
