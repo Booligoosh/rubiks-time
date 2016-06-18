@@ -33,6 +33,17 @@ h2 {
   top: 1em;
   right: 1em;
 }
+span h2 {
+  display: inline;
+  padding: 0.25em;
+  margin-bottom: 0;
+}
+hr {
+  border-color: white;
+}
+#screen3 h2 {
+  font-size: 4em;
+}
 #screen1 {
   display: block;
 }
