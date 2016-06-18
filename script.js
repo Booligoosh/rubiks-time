@@ -86,11 +86,11 @@ function spaceUp() {
 
 function gearClicked() {
   if (document.getElementById("screen3").style.display === "none") {
-    document.getElementById("gear").src === "https://booligoosh.github.io/rubiks-time/clock.svg"
+    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/back.svg"
     showScreen3();
   }
   else {
-    document.getElementById("gear").src === "https://booligoosh.github.io/rubiks-time/gear.svg"
+    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/gear.svg"
     showScreen1();
   }
 }
