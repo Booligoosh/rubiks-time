@@ -60,6 +60,7 @@ function spaceUp() {
   if (event.keyCode === 32) {
     if (startDown === true && inspectionStarted === false) {
       inspection = 16;
+      inspectionStarted = true;
       startInspection();
     }
   }
