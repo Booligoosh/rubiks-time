@@ -128,6 +128,6 @@ function cRight() {
 function backgroundChange() {
   backgroundRGB = backgroundRGBs[backgroundNum];
   backgroundName = backgroundNames[backgroundNum];
-  document.getElementById("body").style.background-image = "linear-gradient( rgba(" + backgroundRGB + ", 0.75), rgba(" + backgroundRGB + ", 0.75) ), url('http://www.planwallpaper.com/static/images/3D-Beach-Wallpaper-HD-Download.jpg');";
+  document.getElementById("body").style.backgroundImage = "linear-gradient( rgba(" + backgroundRGB + ", 0.75), rgba(" + backgroundRGB + ", 0.75) ), url('http://www.planwallpaper.com/static/images/3D-Beach-Wallpaper-HD-Download.jpg');";
   document.getElementById("color").innerHTML = backgroundName;
 }
