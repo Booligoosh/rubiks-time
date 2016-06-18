@@ -46,7 +46,7 @@ function spaceDown() {
       showScreen2();
       startDown = true;
     }
-    if (inspectionStarted === true) {
+    if (inspectionStarted === true && solveStarted === false) {
       solve = 0;
       startTimer();
     }
