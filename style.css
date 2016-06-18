@@ -38,6 +38,10 @@ span h2 {
   padding: 0.25em;
   margin-bottom: 0;
 }
+span img {
+  height: 2.5em;
+  width: auto;
+}
 hr {
   border-color: white;
 }
