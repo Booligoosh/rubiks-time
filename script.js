@@ -230,6 +230,7 @@ function backgroundChange() {
   backgroundName = backgroundNames[backgroundNum];
   document.getElementById("body").style = "background-image: linear-gradient( rgba(" + backgroundRGB + ", 0.75), rgba(" + backgroundRGB + ", 0.75) ), url('https://booligoosh.github.io/rubiks-time/beach.jpg');";
   document.getElementById("color").innerHTML = backgroundName;
+  showScreen5();
 }
 
 function updateCookies() {
