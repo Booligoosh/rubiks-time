@@ -2,7 +2,7 @@
 body {
   margin: 0px;
   background-attachment: fixed;
-  background-image: linear-gradient( rgba(229, 57, 53, 0.75), rgba(229, 57, 53, 0.75) ), url('http://www.planwallpaper.com/static/images/3D-Beach-Wallpaper-HD-Download.jpg')
+  background-image: linear-gradient( rgba(229, 57, 53, 0.75), rgba(229, 57, 53, 0.75) ), url('http://www.planwallpaper.com/static/images/3D-Beach-Wallpaper-HD-Download.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
