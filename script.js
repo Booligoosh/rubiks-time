@@ -39,7 +39,7 @@ function stopInspection() {
 function startSolve() {
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   solve = solve + 1;
-  document.getElementById("numbers").innerHTML = solve.toString();
+  document.getElementById("numbers").innerHTML = solve/100.toString();
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
