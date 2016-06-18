@@ -12,7 +12,10 @@ var inspection;
 var inspectionInterval;
 var inspectionTimer;
 var solve;
+var solveMinutes;
 var solveSeconds;
+var solveHundredths;
+var solveSecondsRaw;
 var solveInterval;
 var solveTimer;
 
@@ -53,8 +56,11 @@ function stopInspection() {
 function startSolve() {
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   solve = solve + 1;
-  solveSeconds = solve / 100;
-  document.getElementById("numbers").innerHTML = solveSeconds.toString();
+  solveMinutes = Math.floor(solve / 6000);
+  solveSeconds = Math.floor(solve / 100);
+  solveSecondsRaw = solve / 100;
+  solveHundredths = solveSecondsRaw.toFixed(2) - solveSeconds;
+  document.getElementById("numbers").innerHTML = solveMinutes.toString() + ":" + solveSeconds.toString() + ":" + solveHundredths.toString();
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
