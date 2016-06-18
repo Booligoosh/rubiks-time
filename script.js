@@ -11,20 +11,20 @@ var solveInterval;
 var solveTimer;
 
 function showScreen1() {
-  document.getElementById("screen1").style.display = "zzz";
+  document.getElementById("screen1").style.display = "block";
   document.getElementById("screen2").style.display = "none";
   document.getElementById("screen3").style.display = "none";
 }
 
 function showScreen2() {
   document.getElementById("screen1").style.display = "none";
-  document.getElementById("screen2").style.display = "zzz";
+  document.getElementById("screen2").style.display = "block";
   document.getElementById("screen3").style.display = "none";
 }
 function showScreen3() {
   document.getElementById("screen1").style.display = "none";
   document.getElementById("screen2").style.display = "none";
-  document.getElementById("screen3").style.display = "zzz";
+  document.getElementById("screen3").style.display = "block";
 }
 
 function startInspection() {
@@ -81,5 +81,16 @@ function spaceUp() {
       inspectionStarted = true;
       startInspection();
     }
+  }
+}
+
+function gearClicked() {
+  if (document.getElementById("screen3").style.display === "none") {
+    document.getElementById("gear").src === "https://booligoosh.github.io/rubiks-time/clock.svg"
+    showScreen3();
+  }
+  else {
+    document.getElementById("gear").src === "https://booligoosh.github.io/rubiks-time/gear.svg"
+    showScreen1();
   }
 }
