@@ -28,6 +28,11 @@ h2 {
   font-size: 9em;
   font-weight: 100;
 }
+#gear {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
 #screen1 {
   display: block;
 }
