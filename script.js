@@ -54,10 +54,10 @@ function spaceDown() {
       startDown = true;
     }
     if (inspectionStarted === true && solveStarted === false) {
-      stopInspection();
       solve = 0;
       solveStarted = true;
       startSolve();
+      stopInspection();
     }
     if (solveStarted === true) {
       stopSolve();
