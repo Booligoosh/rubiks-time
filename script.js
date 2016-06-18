@@ -99,6 +99,7 @@ function startSolve() {
 function stopSolve() {
   clearTimeout(solveTimer);
   solves.push(solve);
+  updateCookies();
 }
 
 function spaceDown() {
@@ -143,11 +144,13 @@ function gearClicked() {
 function iPlus() {
   inspectionStartOn = inspectionStartOn + 1;
   document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+  updateCookies();
 }
 
 function iMinus() {
   inspectionStartOn = inspectionStartOn - 1;
   document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+  updateCookies();
 }
 
 function cLeft() {
@@ -156,6 +159,7 @@ function cLeft() {
     backgroundNum = 5;
   }
   backgroundChange();
+  updateCookies();
 }
 
 function cRight() {
@@ -164,6 +168,7 @@ function cRight() {
     backgroundNum = 0;
   }
   backgroundChange();
+  updateCookies();
 }
 
 function backgroundChange() {
@@ -171,4 +176,8 @@ function backgroundChange() {
   backgroundName = backgroundNames[backgroundNum];
   document.getElementById("body").style = "background-image: linear-gradient( rgba(" + backgroundRGB + ", 0.75), rgba(" + backgroundRGB + ", 0.75) ), url('https://booligoosh.github.io/rubiks-time/beach.jpg');";
   document.getElementById("color").innerHTML = backgroundName;
+}
+
+function updateCookies() {
+    document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
 }
