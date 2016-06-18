@@ -23,10 +23,15 @@ function startInspection() {
   document.getElementById("numbers").innerHTML = inspection.toString();
   if (inspection === 0) {
     solve = 0;
+    solveStarted = true;
     startTimer();
     clearTimeout(inspectionTimer);
   }
   inspectionTimer = setTimeout(startInspection, x*1000);
+}
+
+function stopInspection() {
+  clearTimeout(inspectionTimer);
 }
 
 function startTimer() {
@@ -47,6 +52,7 @@ function spaceDown() {
       startDown = true;
     }
     if (inspectionStarted === true && solveStarted === false) {
+      stopInspection();
       solve = 0;
       solveStarted = true;
       startTimer();
