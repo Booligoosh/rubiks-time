@@ -116,6 +116,7 @@ function cLeft() {
   if (backgroundNum === -1) {
     backgroundNum = 5;
   }
+  backgroundChange();
 }
 
 function cRight() {
@@ -123,6 +124,7 @@ function cRight() {
   if (backgroundNum === 6) {
     backgroundNum = 0;
   }
+  backgroundChange();
 }
 
 function backgroundChange() {
