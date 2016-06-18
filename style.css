@@ -44,6 +44,9 @@ span img {
 }
 hr {
   border-color: white;
+  margin-left: 5em;
+  margin-right: 5em;
+  border-style: solid;
 }
 #screen3 h2 {
   font-size: 4em;
