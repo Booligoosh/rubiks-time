@@ -3,6 +3,7 @@ var startUp = false;
 var inspectionStarted = false;
 var solveStarted = false;
 var inspection;
+var inspectionTimer;
 
 
 function startInspection() {
@@ -11,9 +12,9 @@ function startInspection() {
   document.getElementById("numbers").innerHTML = inspection.toString();
   if (x === 0) {
     startTimer();
-    clearTimeout(timeout);
+    clearTimeout(inspectionTimer);
   }
-  var timeout = setTimeout(startInspection, x*1000);
+  inspectionTimer = setTimeout(startInspection, x*1000);
 }
 
 function spaceDown() {
