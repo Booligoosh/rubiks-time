@@ -7,6 +7,16 @@ var inspectionTimer;
 var solve;
 var solveTimer;
 
+function showScreen1() {
+  document.getElementById("screen1").style.display = "block";
+  document.getElementById("screen2").style.display = "none";
+}
+
+function showScreen2() {
+  document.getElementById("screen1").style.display = "none";
+  document.getElementById("screen2").style.display = "block";
+}
+
 function startInspection() {
   var x = 1;  // 1 Second
   inspection = inspection - 1;
@@ -33,6 +43,7 @@ function stopTimer() {
 function spaceDown() {
   if (event.keyCode === 32) {
     if (startDown === false) {
+      showScreen2();
       startDown = true;
     }
     if (inspectionStarted === true) {
