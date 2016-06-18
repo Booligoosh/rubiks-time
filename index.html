@@ -6,6 +6,7 @@
   </head>
   <body id="body" onkeydown="spaceDown()" onkeyup="spaceUp()">
     <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time/gear.svg">
+    <img id="stats" onclick="statsClicked()" src="https://booligoosh.github.io/rubiks-time/stats.svg">
     <div id="screen1" style="display: block;">
       <h1>Rubik's Time</h1>
       <h2>Ready</h2>
@@ -21,6 +22,16 @@
       <h2>Color</h2>
       <span id="colorspan"><img src="https://booligoosh.github.io/rubiks-time/left.svg" onclick="cLeft()"><h2 id="color">Red</h2><img src="https://booligoosh.github.io/rubiks-time/right.svg" onclick="cRight()"></span>
     </div>
+    <div id="screen4" style="display: none;">
+      <h1>Stats</h1>
+      <h2 onclick="solvesList()">Solves List</h2>
+      <hr>
+      <h2>Otters!</h2>
+    </div>
+    <div id="screen5" style="display: none;">
+      <h1>Solves List</h1>
+    </div>
+
     <script src="https://booligoosh.github.io/rubiks-time/script.js"></script>
   </body>
 </html>
