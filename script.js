@@ -49,8 +49,6 @@ else {
   var solveTimer;
 }
 
-}
-
 function showScreen1() {
   document.getElementById("screen1").style.display = "block";
   document.getElementById("screen2").style.display = "none";
