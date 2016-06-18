@@ -56,18 +56,40 @@ function showScreen1() {
   document.getElementById("screen1").style.display = "block";
   document.getElementById("screen2").style.display = "none";
   document.getElementById("screen3").style.display = "none";
+  document.getElementById("screen4").style.display = "none";
+  document.getElementById("screen5").style.display = "none";
 }
 
 function showScreen2() {
   document.getElementById("screen1").style.display = "none";
   document.getElementById("screen2").style.display = "block";
   document.getElementById("screen3").style.display = "none";
+  document.getElementById("screen4").style.display = "none";
+  document.getElementById("screen5").style.display = "none";
 }
 
 function showScreen3() {
   document.getElementById("screen1").style.display = "none";
   document.getElementById("screen2").style.display = "none";
   document.getElementById("screen3").style.display = "block";
+  document.getElementById("screen4").style.display = "none";
+  document.getElementById("screen5").style.display = "none";
+}
+
+function showScreen4() {
+  document.getElementById("screen1").style.display = "none";
+  document.getElementById("screen2").style.display = "none";
+  document.getElementById("screen3").style.display = "none";
+  document.getElementById("screen4").style.display = "block";
+  document.getElementById("screen5").style.display = "none";
+}
+
+function showScreen5() {
+  document.getElementById("screen1").style.display = "none";
+  document.getElementById("screen2").style.display = "none";
+  document.getElementById("screen3").style.display = "none";
+  document.getElementById("screen4").style.display = "none";
+  document.getElementById("screen5").style.display = "block";
 }
 
 function startInspection() {
@@ -144,6 +166,18 @@ function gearClicked() {
   }
 }
 
+function statsClicked() {
+  if (document.getElementById("screen4").style.display === "none") {
+    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg"
+    showScreen4();
+  }
+  else {
+    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/stats.svg"
+    showScreen1();
+  }
+}
+
+
 function iPlus() {
   inspectionStartOn = inspectionStartOn + 1;
   document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
@@ -184,3 +218,4 @@ function backgroundChange() {
 function updateCookies() {
     document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
 }
+
