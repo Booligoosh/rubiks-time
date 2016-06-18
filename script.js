@@ -112,6 +112,7 @@ function stopInspection() {
 }
 
 function startSolve() {
+  clearTimeout(inspectionTimer);
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   solve = solve + 1;
   solveMinutes = Math.floor(solve / 6000);
