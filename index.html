@@ -6,14 +6,14 @@
   </head>
   <body onkeydown="spaceDown()" onkeyup="spaceUp()">
     <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time/gear.svg">
-    <div id="screen1">
+    <div id="screen1" style="display: block;">
       <h1>Rubik's Time</h1>
       <h2>Ready</h2>
     </div>
-    <div id="screen2">
+    <div id="screen2" style="display: none;">
       <h1 id="numbers">Ready</h1>
     </div>
-    <div id="screen3">
+    <div id="screen3" style="display: none;">
       <h1>Settings</h1>
       <h2>Inspection time (seconds)</h2>
       <span id="inspectionspan"><img src="https://booligoosh.github.io/rubiks-time/plus.svg" onclick="iPlus()"><h2 id="inspection">15</h2><img src="https://booligoosh.github.io/rubiks-time/minus.svg" onclick="iMinus()"></span>
