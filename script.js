@@ -59,8 +59,8 @@ function startSolve() {
   solveMinutes = Math.floor(solve / 6000);
   solveSeconds = Math.floor(solve / 100);
   solveSecondsRaw = solve / 100;
-  solveHundredths = solveSecondsRaw.toFixed(2) - solveSeconds;
-  document.getElementById("numbers").innerHTML = solveMinutes.toString() + ":" + solveSeconds.toString() + ":" + solveHundredths.toString();
+  solveHundredths = solveSecondsRaw - solveSeconds;
+  document.getElementById("numbers").innerHTML = solveMinutes.toString() + ":" + solveSeconds.toString() + ":" + solveHundredths..toFixed(2).toString();
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
