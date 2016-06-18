@@ -10,7 +10,7 @@ function startInspection() {
   var x = 1;  // 1 Second
   inspection = inspection - 1;
   document.getElementById("numbers").innerHTML = inspection.toString();
-  if (x === 0) {
+  if (inspection === 0) {
     startTimer();
     clearTimeout(inspectionTimer);
   }
