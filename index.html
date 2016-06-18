@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="https://booligoosh.github.io/rubiks-time/style.css">
   </head>
   <body onkeydown="spaceDown()" onkeyup="spaceUp()">
-    <img id="gear" onclick="showScreen3()" src="https://booligoosh.github.io/rubiks-time/gear.svg">
+    <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time/gear.svg">
     <div id="screen1">
       <h1>Rubik's Time</h1>
       <h2>Ready</h2>
@@ -15,12 +15,13 @@
     </div>
     <div id="screen3">
       <h1>Settings</h1>
+      <hr>
       <h2>Inspection time (seconds)</h2>
       <span id="inspectionspan"><h2 id="inspectionleft">+</h2><h2 id="inspection">15</h2><h2 id="inspectionright">-</h2></span>
       <hr>
       <h2>Color</h2>
       <span id="colorspan"><h2 id="colorleft"><</h2><h2 id="color">Red</h2><h2 id="colorright">></h2></span>
-      <h2></h2>
+      <hr>
     </div>
     <script src="https://booligoosh.github.io/rubiks-time/script.js"></script>
   </body>
