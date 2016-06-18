@@ -63,7 +63,7 @@ function startSolve() {
   solveSecondsRaw = solve / 100;
   solveHundredthsRaw = (solveSecondsRaw - solveSeconds) * 100;
   solveHundredths = Math.floor(solveHundredthsRaw);
-  document.getElementById("numbers").innerHTML = solveMinutes + ":" + solveSeconds + ":" + solveHundredths;
+  document.getElementById("numbers").innerHTML = solveMinutes + ":" + solveSeconds + ":" + solveHundredths.toPrecision(2);
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
