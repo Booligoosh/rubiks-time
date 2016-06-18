@@ -13,7 +13,7 @@ function startInspection() {
     startTimer();
     clearTimeout(timeout);
   }
-  var timeout = setTimeout(start, x*1000);
+  var timeout = setTimeout(startInspection, x*1000);
 }
 
 function spaceDown() {
