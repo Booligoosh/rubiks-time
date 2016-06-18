@@ -53,14 +53,14 @@ function spaceDown() {
       showScreen2();
       startDown = true;
     }
+    if (solveStarted === true) {
+      stopSolve();
+    }
     if (inspectionStarted === true && solveStarted === false) {
       solve = 0;
       solveStarted = true;
       startSolve();
       clearTimeout(inspectionTimer);
-    }
-    if (solveStarted === true) {
-      stopSolve();
     }
   }
 }
