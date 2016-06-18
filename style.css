@@ -1,0 +1,24 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+body {
+  margin: 0px;
+  background-attachment: fixed;
+  background-image: linear-gradient( rgba(229, 57, 53, 0.75), rgba(229, 57, 53, 0.75) ), url('http://www.planwallpaper.com/static/images/3D-Beach-Wallpaper-HD-Download.jpg')
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+}
+h1 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  font-size: 9em;
+  font-weight: 100;
+}
+h2 {
+  font-size: 5em;
+  margin-top: 0;
+  font-weight: 100;
+}
