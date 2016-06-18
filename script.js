@@ -78,7 +78,7 @@ function spaceDown() {
 function spaceUp() {
   if (event.keyCode === 32) {
     if (startDown === true && inspectionStarted === false) {
-      inspection = inspectionStartOn - 1;
+      inspection = inspectionStartOn + 1;
       inspectionStarted = true;
       startInspection();
     }
