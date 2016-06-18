@@ -23,13 +23,7 @@ if (document.cookie === "") {
   var solveTimer;
 }
 else {
-  var cookiesList = document.cookie.split("|");
-  var inspectionStartOn = Number(cookiesList[1]);
-  document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
-  var backgroundNum = Number(cookiesList[2]);
-  backgroundChange();
-  var solves = cookiesList[3].split(',');
-  //Normal init with predefined vars missing
+  //Normal init with cookie vars missing
   var startDown = false;
   var startUp = false;
   var inspectionStarted = false;
@@ -49,6 +43,13 @@ else {
   var solveHundredthsRaw;
   var solveInterval;
   var solveTimer;
+  //Cookie vars
+  var cookiesList = document.cookie.split("|");
+  var inspectionStartOn = Number(cookiesList[1]);
+  document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+  var backgroundNum = Number(cookiesList[2]);
+  backgroundChange();
+  var solves = cookiesList[3].split(',');
 }
 
 function showScreen1() {
