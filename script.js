@@ -2,6 +2,11 @@ var startDown = false;
 var startUp = false;
 var inspectionStarted = false;
 var solveStarted = false;
+var backgroundNum = 0;
+var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "255, 255, 255"];
+var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "White"];
+var backgroundRGB = "229, 57, 53";
+var backgroundName = "Red";
 var inspectionStartOn = 15;
 var inspection;
 var inspectionInterval;
@@ -104,4 +109,25 @@ function iPlus() {
 function iMinus() {
   inspectionStartOn = inspectionStartOn - 1;
   document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+}
+
+function cLeft() {
+  backgroundNum = backgroundNum - 1;
+  if (backgroundNum === -1) {
+    backgroundNum = 5;
+  }
+}
+
+function cRight() {
+  backgroundNum = backgroundNum + 1;
+  if (backgroundNum === 6) {
+    backgroundNum = 0;
+  }
+}
+
+function backgroundChange() {
+  backgroundRGB = backgroundRGBs[backgroundNum];
+  backgroundName = backgroundNames[backgroundNum];
+  document.getElementById("body").style.background-image = "linear-gradient( rgba(" + backgroundRGB + ", 0.75), rgba(" + backgroundRGB + ", 0.75) ), url('http://www.planwallpaper.com/static/images/3D-Beach-Wallpaper-HD-Download.jpg');";
+  document.getElementById("color").innerHTML = backgroundName;
 }
