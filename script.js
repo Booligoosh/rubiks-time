@@ -130,6 +130,15 @@ function stopSolve() {
   updateCookies();
 }
 
+function clockify(num) {
+  var min = Math.floor(num / 6000);
+  var sec = Math.floor(num / 100);
+  var secRaw = num / 100;
+  var hundRaw = (secRaw - sec) * 100;
+  var hund = Math.floor(hundRaw);
+  return(min + ":" + sec + ":" + hund);
+}
+
 function spaceDown() {
   if (event.keyCode === 32) {
     if (startDown === false) {
@@ -184,7 +193,7 @@ function solvesList() {
   solvesListLoop = -1;
   while (solvesListLoop < solves.length - 1) {
     solvesListLoop = solvesListLoop + 1;
-    addToSolvesDisplay(solves[solvesListLoop]);
+    addToSolvesDisplay(clockify(solves[solvesListLoop]));
   }
   showScreen5();
 }
