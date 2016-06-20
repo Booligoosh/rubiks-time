@@ -116,7 +116,7 @@ function startSolve() {
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   solve = solve + 1;
   solveMinutes = Math.floor(solve / 6000);
-  solveSeconds = Math.floor(solve / 100);
+  solveSeconds = Math.floor(solve / 100) - solveMinutes;
   solveSecondsRaw = solve / 100;
   solveHundredthsRaw = (solveSecondsRaw - solveSeconds) * 100;
   solveHundredths = Math.floor(solveHundredthsRaw);
@@ -132,7 +132,7 @@ function stopSolve() {
 
 function clockify(num) {
   var min = Math.floor(num / 6000);
-  var sec = Math.floor(num / 100);
+  var sec = Math.floor(num / 100) - min;
   var secRaw = num / 100;
   var hundRaw = (secRaw - sec) * 100;
   var hund = Math.floor(hundRaw);
