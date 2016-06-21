@@ -32,6 +32,9 @@ else {
   var startUp = false;
   var inspectionStarted = false;
   var solveStarted = false;
+  var currentScreen;
+  var prevScreen;
+  var screenBeforeStats;
   var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "117, 117, 117"];
   var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "Grey"];
   var backgroundRGB;
@@ -166,7 +169,7 @@ function gearClicked() {
 function statsClicked() {
   if (document.getElementById("screen4").style.display === "none" && document.getElementById("screen5").style.display === "none") {
     document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg";
-    var screenBeforeStats = currentScreen;
+    screenBeforeStats = currentScreen;
     showScreen(4);
   }
   else if (document.getElementById("screen4").style.display === "none") {
