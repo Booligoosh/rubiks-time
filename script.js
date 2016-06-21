@@ -125,7 +125,7 @@ function stopSolve() {
   updateCookies();
   document.getElementById("prevsolve").style.display = "block";
   document.getElementById("prevsolve").innerHTML = clockify(solves[solves.length - 1]);
-  document.getElementById("number").innerHTML = "Ready";
+  document.getElementById("numbers").innerHTML = "Ready";
   newSolve();
 }
 
@@ -152,6 +152,7 @@ function spaceDown() {
   if (event.keyCode === 32) {
     if (startDown === false) {
       showScreen2();
+      document.getElementById("prevsolve").style.display = "none";
       startDown = true;
     }
     if (solveStarted === true) {
