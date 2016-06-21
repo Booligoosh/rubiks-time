@@ -115,12 +115,6 @@ function startSolve() {
   clearTimeout(inspectionTimer);
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   solve = solve + 1;
-//  solveMinutes = Math.floor(solve / 6000);
-//  solveSeconds = Math.floor(solve / 100) - solveMinutes;
-//  solveSecondsRaw = solve / 100;
-//  solveHundredthsRaw = (solveSecondsRaw - solveSeconds) * 100;
-//  solveHundredths = Math.floor(solveHundredthsRaw);
-//  document.getElementById("numbers").innerHTML = solveMinutes + ":" + solveSeconds + ":" + solveHundredths;
   document.getElementById("numbers").innerHTML = clockify(solve);
   solveTimer = setTimeout(startSolve, solveInterval);
 }
@@ -201,6 +195,7 @@ function statsClicked() {
 }
 
 function solvesList() {
+  document.getElementById("solveslist").innerHTML = "";
   solvesListLoop = -1;
   while (solvesListLoop < solves.length - 1) {
     solvesListLoop = solvesListLoop + 1;
