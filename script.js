@@ -196,15 +196,15 @@ function solvesList() {
 }
 
 function moreStats() {
-  chartArray = [['Time', 'Time (seconds)']];
+  chartArray = [['Solve number', 'Time (seconds)']];
   chartLoop = 0;
   while (chartLoop < solves.length) {
-    chartArray.push([0, solves[chartLoop]]);
+    chartArray.push([chartLoop + 1, Number(solves[chartLoop])]);
     chartLoop = chartLoop + 1;
   }
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
-  showScreen6();
+  showScreen(6);
 }
 
 function addToSolvesDisplay(data) {
