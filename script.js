@@ -70,6 +70,7 @@ function showScreen(num) {
   document.getElementById("screen3").style.display = "none";
   document.getElementById("screen4").style.display = "none";
   document.getElementById("screen5").style.display = "none";
+  document.getElementById("screen6").style.display = "none";
   document.getElementById("screen" + num).style.display = "block";
   prevScreen = currentScreen;
   currentScreen = num;
