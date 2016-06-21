@@ -58,6 +58,9 @@ hr {
 #screen3 h2 {
   font-size: 4em;
 }
+#screen4 h2 {
+  margin-bottom: 0.5em;
+}
 #screen1 {
   display: block;
 }
