@@ -200,7 +200,7 @@ function moreStats() {
   chartArray = [['Solve number', 'Time (seconds)']];
   chartLoop = 0;
   while (chartLoop < solves.length) {
-    chartArray.push([chartLoop + 1, Number(solves[chartLoop]) / 100]);
+    chartArray.push(["Solve " + (chartLoop + 1), Number(solves[chartLoop]) / 100]);
     chartLoop = chartLoop + 1;
   }
   google.charts.load('current', {'packages':['corechart']});
