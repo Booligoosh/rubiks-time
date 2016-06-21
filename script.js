@@ -3,6 +3,8 @@ if (document.cookie === "") {
   var startUp = false;
   var inspectionStarted = false;
   var solveStarted = false;
+  var currentScreen;
+  var prevScreen;
   var backgroundNum = 0;
   var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "117, 117, 117"];
   var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "Grey"];
@@ -54,12 +56,26 @@ else {
   var solves = cookiesList[3].split(',');
 }
 
+function showScreen(num) {
+  document.getElementById("screen1").style.display = "none";
+  document.getElementById("screen2").style.display = "none";
+  document.getElementById("screen3").style.display = "none";
+  document.getElementById("screen4").style.display = "none";
+  document.getElementById("screen5").style.display = "none";
+  document.getElementById("screen" + num).style.display = "block";
+  prevScreen = currentScreen;
+  currentScreen = num;
+}
+
+/*
 function showScreen1() {
   document.getElementById("screen1").style.display = "block";
   document.getElementById("screen2").style.display = "none";
   document.getElementById("screen3").style.display = "none";
   document.getElementById("screen4").style.display = "none";
   document.getElementById("screen5").style.display = "none";
+  prevScreen = currentScreen;
+  currentScreen = 1;
 }
 
 function showScreen2() {
@@ -68,6 +84,8 @@ function showScreen2() {
   document.getElementById("screen3").style.display = "none";
   document.getElementById("screen4").style.display = "none";
   document.getElementById("screen5").style.display = "none";
+  prevScreen = currentScreen;
+  currentScreen = 2;
 }
 
 function showScreen3() {
@@ -76,6 +94,8 @@ function showScreen3() {
   document.getElementById("screen3").style.display = "block";
   document.getElementById("screen4").style.display = "none";
   document.getElementById("screen5").style.display = "none";
+  prevScreen = currentScreen;
+  currentScreen = 3;
 }
 
 function showScreen4() {
@@ -84,6 +104,8 @@ function showScreen4() {
   document.getElementById("screen3").style.display = "none";
   document.getElementById("screen4").style.display = "block";
   document.getElementById("screen5").style.display = "none";
+  prevScreen = currentScreen;
+  currentScreen = 4;
 }
 
 function showScreen5() {
@@ -92,7 +114,11 @@ function showScreen5() {
   document.getElementById("screen3").style.display = "none";
   document.getElementById("screen4").style.display = "none";
   document.getElementById("screen5").style.display = "block";
+  prevScreen = currentScreen;
+  currentScreen = 5;
 }
+
+*/
 
 function startInspection() {
   inspectionInterval = 1;  // 1 Second
@@ -151,7 +177,7 @@ function clockify(num) {
 function spaceDown() {
   if (event.keyCode === 32) {
     if (startDown === false) {
-      showScreen2();
+      showScreen(2);
       document.getElementById("screen2sub").style.display = "none";
       document.getElementById("numbers").innerHTML = "Ready";
       startDown = true;
@@ -181,22 +207,22 @@ function spaceUp() {
 function gearClicked() {
   if (document.getElementById("screen3").style.display === "none") {
     document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/left.svg"
-    showScreen3();
+    showScreen(3);
   }
   else {
     document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/gear.svg"
-    showScreen1();
+    showScreen(prevScreen);
   }
 }
 
 function statsClicked() {
   if (document.getElementById("screen4").style.display === "none") {
     document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg"
-    showScreen4();
+    showScreen(4);
   }
   else {
     document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/stats.svg"
-    showScreen1();
+    showScreen(prevScreen);
   }
 }
 
@@ -207,7 +233,7 @@ function solvesList() {
     solvesListLoop = solvesListLoop + 1;
     addToSolvesDisplay(clockify(solves[solvesListLoop]));
   }
-  showScreen5();
+  showScreen(5);
 }
 
 function addToSolvesDisplay(data) {
