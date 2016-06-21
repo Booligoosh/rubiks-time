@@ -55,6 +55,9 @@ hr {
   margin-right: 5em;
   border-style: solid;
 }
+#graph svg:nth-child(2) {
+  fill: rgba(0,0,0,0);
+}
 #screen3 h2 {
   font-size: 4em;
 }
@@ -74,5 +77,8 @@ hr {
   display: none;
 }
 #screen5 {
+  display: none;
+}
+#screen6 {
   display: none;
 }
