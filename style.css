@@ -68,6 +68,12 @@ hr {
   fill: white;
   font-family: 'Open Sans', sans-serif;
 }
+#graph svg g:nth-child(6) text {
+  fill: black;
+}
+#graph svg g:nth-child(5) g g rect {
+  fill: white;
+}
 #screen3 h2 {
   font-size: 4em;
 }
