@@ -64,6 +64,10 @@ hr {
 #graph svg path {
   stroke: white;
 }
+#graph svg text {
+  fill: white;
+  font-family: 'Open Sans', sans-serif;
+}
 #screen3 h2 {
   font-size: 4em;
 }
