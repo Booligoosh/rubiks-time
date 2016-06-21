@@ -134,9 +134,9 @@ function stopSolve() {
 function clockify(num) {
   var minRaw = num / 6000;
   var min = Math.floor(minRaw);
-  var secRaw = minRaw * 60;
+  var secRaw = (minRaw - min) * 60;
   var sec = Math.floor(secRaw);
-  var hundRaw = secRaw * 100;
+  var hundRaw = (secRaw - sec) * 100;
   var hund = Math.floor(hundRaw);
   return(min + ":" + sec + ":" + hund);
 }
