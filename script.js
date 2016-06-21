@@ -171,7 +171,7 @@ function gearClicked() {
 }
 
 function statsClicked() {
-  if (document.getElementById("screen4").style.display === "none" && document.getElementById("screen5").style.display === "none") {
+  if (document.getElementById("screen4").style.display === "none" && document.getElementById("screen5").style.display === "none" && document.getElementById("screen6").style.display === "none") {
     document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg";
     screenBeforeStats = currentScreen;
     showScreen(4);
