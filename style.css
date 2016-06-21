@@ -55,8 +55,14 @@ hr {
   margin-right: 5em;
   border-style: solid;
 }
-#graph svg:nth-child(2) {
+#graph svg rect:nth-child(1) {
+  fill: white;
+}
+#graph svg rect:nth-child(2) {
   fill: rgba(0,0,0,0);
+}
+#graph svg path {
+  stroke: white;
 }
 #screen3 h2 {
   font-size: 4em;
