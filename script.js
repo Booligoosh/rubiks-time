@@ -196,10 +196,10 @@ function solvesList() {
 }
 
 function moreStats() {
-  chartArray = ['Time (seconds)'];
+  chartArray = [['Time', 'Time (seconds)']];
   chartLoop = 0;
   while (chartLoop < solves.length) {
-    chartArray.push([solves[chartLoop]]);
+    chartArray.push([0, solves[chartLoop]]);
     chartLoop = chartLoop + 1;
   }
   google.charts.load('current', {'packages':['corechart']});
