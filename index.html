@@ -9,7 +9,10 @@
     <link rel="apple-touch-icon" sizes="144x144" href="https://booligoosh.github.io/rubiks-time/z-icon-144.png">
     <link rel="icon" type="image/png" href="https://booligoosh.github.io/rubiks-time/z-favicon.png">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  </head>
+    <script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+    </script>
   </head>
   <body id="body" onkeydown="spaceDown()" onkeyup="spaceUp()">
     <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time/gear.svg">
