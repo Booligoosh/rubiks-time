@@ -5,6 +5,7 @@ if (document.cookie === "") {
   var solveStarted = false;
   var currentScreen;
   var prevScreen;
+  var screenBeforeStats;
   var backgroundNum = 0;
   var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "117, 117, 117"];
   var backgroundNames = ["Red", "Orange", "Blue", "Green", "Yellow", "Grey"];
@@ -66,59 +67,6 @@ function showScreen(num) {
   prevScreen = currentScreen;
   currentScreen = num;
 }
-
-/*
-function showScreen1() {
-  document.getElementById("screen1").style.display = "block";
-  document.getElementById("screen2").style.display = "none";
-  document.getElementById("screen3").style.display = "none";
-  document.getElementById("screen4").style.display = "none";
-  document.getElementById("screen5").style.display = "none";
-  prevScreen = currentScreen;
-  currentScreen = 1;
-}
-
-function showScreen2() {
-  document.getElementById("screen1").style.display = "none";
-  document.getElementById("screen2").style.display = "block";
-  document.getElementById("screen3").style.display = "none";
-  document.getElementById("screen4").style.display = "none";
-  document.getElementById("screen5").style.display = "none";
-  prevScreen = currentScreen;
-  currentScreen = 2;
-}
-
-function showScreen3() {
-  document.getElementById("screen1").style.display = "none";
-  document.getElementById("screen2").style.display = "none";
-  document.getElementById("screen3").style.display = "block";
-  document.getElementById("screen4").style.display = "none";
-  document.getElementById("screen5").style.display = "none";
-  prevScreen = currentScreen;
-  currentScreen = 3;
-}
-
-function showScreen4() {
-  document.getElementById("screen1").style.display = "none";
-  document.getElementById("screen2").style.display = "none";
-  document.getElementById("screen3").style.display = "none";
-  document.getElementById("screen4").style.display = "block";
-  document.getElementById("screen5").style.display = "none";
-  prevScreen = currentScreen;
-  currentScreen = 4;
-}
-
-function showScreen5() {
-  document.getElementById("screen1").style.display = "none";
-  document.getElementById("screen2").style.display = "none";
-  document.getElementById("screen3").style.display = "none";
-  document.getElementById("screen4").style.display = "none";
-  document.getElementById("screen5").style.display = "block";
-  prevScreen = currentScreen;
-  currentScreen = 5;
-}
-
-*/
 
 function startInspection() {
   inspectionInterval = 1;  // 1 Second
@@ -206,23 +154,27 @@ function spaceUp() {
 
 function gearClicked() {
   if (document.getElementById("screen3").style.display === "none") {
-    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/left.svg"
+    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/left.svg";
     showScreen(3);
   }
   else {
-    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/gear.svg"
+    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/gear.svg";
     showScreen(prevScreen);
   }
 }
 
 function statsClicked() {
-  if (document.getElementById("screen4").style.display === "none") {
-    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg"
+  if (document.getElementById("screen4").style.display === "none" && document.getElementById("screen5").style.display === "none") {
+    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg";
+    var screenBeforeStats = currentScreen;
+    showScreen(4);
+  }
+  else if (document.getElementById("screen4").style.display === "none") {
     showScreen(4);
   }
   else {
-    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/stats.svg"
-    showScreen(prevScreen);
+    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/stats.svg";
+    showScreen(screenBeforeStats);
   }
 }
 
