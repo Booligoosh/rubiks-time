@@ -3,7 +3,7 @@ if (document.cookie === "") {
   var startUp = false;
   var inspectionStarted = false;
   var solveStarted = false;
-  var currentScreen;
+  var currentScreen = 1;
   var prevScreen;
   var screenBeforeStats;
   var backgroundNum = 0;
@@ -32,7 +32,7 @@ else {
   var startUp = false;
   var inspectionStarted = false;
   var solveStarted = false;
-  var currentScreen;
+  var currentScreen = 1;
   var prevScreen;
   var screenBeforeStats;
   var backgroundRGBs = ["229, 57, 53", "244, 81, 30", "57, 73, 171", "67, 160, 71", "255, 179, 0", "117, 117, 117"];
