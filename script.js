@@ -138,13 +138,13 @@ function clockify(num) {
   var sec = Math.floor(secRaw);
   var hundRaw = (secRaw - sec) * 100;
   var hund = Math.floor(hundRaw);
-  if (min.length <  2) {
+  if (min.toString().length <  2) {
     min = "0" + min;
   }
-  if (sec.length <  2) {
+  if (sec.toString().length <  2) {
     sec = "0" + sec;
   }
-  if (hund.length <  2) {
+  if (hund.toString().length <  2) {
     hund = "0" + hund;
   }
   return(min + ":" + sec + ":" + hund);
