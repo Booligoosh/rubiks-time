@@ -25,6 +25,8 @@ if (document.cookie === "") {
   var solveInterval;
   var solveTimer;
   var solvesListLoop;
+  var chartLoop;
+  var chartArray;
 }
 else {
   //Normal init with cookie vars missing
@@ -51,6 +53,8 @@ else {
   var solveInterval;
   var solveTimer;
   var solvesListLoop;
+  var chartLoop;
+  var chartArray;
   //Cookie vars
   var cookiesList = document.cookie.split("|");
   var inspectionStartOn = Number(cookiesList[1]);
@@ -191,6 +195,18 @@ function solvesList() {
   showScreen(5);
 }
 
+function moreStats() {
+  chartArray = ['Time (seconds)'];
+  chartLoop = 0;
+  while (chartLoop < solves.length) {
+    chartArray.push([solves[chartLoop]]);
+    chartLoop = chartLoop + 1;
+  }
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  showScreen6();
+}
+
 function addToSolvesDisplay(data) {
   var h2 = document.createElement("h2");
   var t = document.createTextNode(data);
@@ -248,3 +264,18 @@ function newSolve() {
   inspectionStarted = false;
   solveStarted = false;
 }
+
+//GOOGLE CHARTS SCRIPTS
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(chartArray);
+
+        var options = {
+          title: 'Solves over time',
+          //curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('graph'));
+
+        chart.draw(data, options);
+      }
