@@ -123,9 +123,9 @@ function stopSolve() {
   clearTimeout(solveTimer);
   solves.push(solve);
   updateCookies();
-  document.getElementById("prevsolve").style.display = "block";
-  document.getElementById("prevsolve").innerHTML = clockify(solves[solves.length - 1]);
-  document.getElementById("numbers").innerHTML = "Ready";
+  document.getElementById("screen2sub").style.display = "block";
+  document.getElementById("screen2sub").innerHTML = "Ready";
+  document.getElementById("numbers").innerHTML = clockify(solves[solves.length - 1]);
   newSolve();
 }
 
@@ -152,7 +152,8 @@ function spaceDown() {
   if (event.keyCode === 32) {
     if (startDown === false) {
       showScreen2();
-      document.getElementById("prevsolve").style.display = "none";
+      document.getElementById("screen2sub").style.display = "none";
+      document.getElementById("numbers").innerHTML = "Ready";
       startDown = true;
     }
     if (solveStarted === true) {
