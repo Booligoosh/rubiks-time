@@ -123,6 +123,10 @@ function stopSolve() {
   clearTimeout(solveTimer);
   solves.push(solve);
   updateCookies();
+  document.getElementById("prevsolve").style.display = "block";
+  document.getElementById("prevsolve").innerHTML = clockify(solves[solves.length - 1]);
+  document.getElementById("number").innerHTML = "Ready";
+  newSolve();
 }
 
 function clockify(num) {
@@ -253,4 +257,11 @@ function backgroundChange() {
 
 function updateCookies() {
     document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
+}
+
+function newSolve() {
+  startDown = false;
+  startUp = false;
+  inspectionStarted = false;
+  solveStarted = false;
 }
