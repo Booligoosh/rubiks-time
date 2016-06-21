@@ -203,8 +203,9 @@ function moreStats() {
     chartArray.push(["Solve " + (chartLoop + 1), Number(solves[chartLoop]) / 100]);
     chartLoop = chartLoop + 1;
   }
-  google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
+  //google.charts.load('current', {'packages':['corechart']});
+  //google.charts.setOnLoadCallback(drawChart);
+  drawChart();
   showScreen(6);
 }
 
