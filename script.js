@@ -219,9 +219,11 @@ function iPlus() {
 }
 
 function iMinus() {
-  inspectionStartOn = inspectionStartOn - 1;
-  document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
-  updateCookies();
+  if (inspectionStartOn != 0) {
+    inspectionStartOn = inspectionStartOn - 1;
+    document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+    updateCookies();
+  }
 }
 
 function cLeft() {
