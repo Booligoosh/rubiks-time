@@ -204,9 +204,18 @@ function moreStats() {
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
-  //google.charts.load('current', {'packages':['corechart']});
-  //google.charts.setOnLoadCallback(drawChart);
+  document.getElementById("average").innerHTML = "Average: " + getAverage(solves);
   drawChart();
+}
+
+function getAverage(array) {
+  var total = 0;
+  var averageLoop = 0;
+  while (averageLoop < array.length) {
+    total = total + array[averageLoop]
+    averageLoop = averageLoop + 1;
+  }
+  return(total / array.length);
 }
 
 function addToSolvesDisplay(data) {
