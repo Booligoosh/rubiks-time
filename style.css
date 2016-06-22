@@ -70,7 +70,7 @@ hr {
   font-family: 'Open Sans', sans-serif;
 }
 #graph svg g:nth-child(4) {
-  diplay: none;
+  display: none;
 }
 #graph svg g:nth-child(5) g:nth-child(4) g text {
   fill: white;
