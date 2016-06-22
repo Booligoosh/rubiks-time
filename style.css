@@ -20,6 +20,7 @@ h1 {
 h2 {
   font-size: 5em;
   margin-top: 0;
+  margin-bottom: 0.5em;
   font-weight: 100;
 }
 #numbers {
@@ -76,12 +77,6 @@ hr {
 }
 #graph svg g:nth-child(5) g g rect {
   fill: white;
-}
-#screen3 h2 {
-  font-size: 4em;
-}
-#screen4 h2 {
-  margin-bottom: 0.5em;
 }
 #screen1 {
   display: block;
