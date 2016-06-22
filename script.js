@@ -204,7 +204,8 @@ function moreStats() {
   chartArray = [['Solve number', 'Time (seconds)']];
   chartLoop = 0;
   while (chartLoop < solves.length) {
-    chartArray.push(["Solve " + (chartLoop + 1), Number(solves[chartLoop]) / 100]);
+    chartArray.push(["Solve " + (chartLoop + 1) + " - " + clockify(Number(solves[chartLoop])), Number(solves[chartLoop]) / 100]);
+    //OLD CHART FORMAT: chartArray.push(["Solve " + (chartLoop + 1), Number(solves[chartLoop]) / 100]);
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
