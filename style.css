@@ -84,6 +84,9 @@ hr {
 #graph svg g:nth-child(6) g g:nth-child(4) {
   display: block;
 }
+#graph svg g:nth-child(6) g g:nth-child(5) {
+  display: none;
+}
 #screen1 {
   display: block;
 }
