@@ -204,15 +204,15 @@ function moreStats() {
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
-  document.getElementById("average").innerHTML = "Average: " + getAverage(solves);
+  document.getElementById("average").innerHTML = "Average: " + averageOfArray(solves);
   drawChart();
 }
 
-function getAverage(array) {
+function averageOfArray(array) {
   var total = 0;
   var averageLoop = 0;
   while (averageLoop < array.length) {
-    total = total + array[averageLoop]
+    total = total + Number(array[averageLoop]);
     averageLoop = averageLoop + 1;
   }
   return(total / array.length);
