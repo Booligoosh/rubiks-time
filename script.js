@@ -204,7 +204,7 @@ function moreStats() {
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
-  document.getElementById("average").innerHTML = "Average: " + averageOfArray(solves);
+  document.getElementById("average").innerHTML = "Average: " + clockify(averageOfArray(solves));
   drawChart();
 }
 
