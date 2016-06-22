@@ -64,6 +64,10 @@ else {
   var solves = cookiesList[3].split(',');
 }
 
+Array.min = function( array ){
+    return Math.min.apply( Math, array );
+};
+
 function showScreen(num) {
   document.getElementById("screen1").style.display = "none";
   document.getElementById("screen2").style.display = "none";
@@ -204,7 +208,10 @@ function moreStats() {
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
+  var averagesOfFive = averageOfFivesOfArray(solves);
   document.getElementById("average").innerHTML = "Average: " + clockify(averageOfArray(solves));
+  document.getElementById("currentaverageof5").innerHTML = "Current average of 5: " + clockify(averagesOfFive[averagesOfFive.length - 1]);
+  document.getElementById("bestaverageof5").innerHTML = "Best average of 5: " + clockify(Array.min(averagesOfFive));
   drawChart();
 }
 
@@ -216,6 +223,18 @@ function averageOfArray(array) {
     averageLoop = averageLoop + 1;
   }
   return(total / array.length);
+}
+
+function averageOfFivesOfArray(array) {
+  var fiveArray = 0;
+  var fiveLoop = 0;
+  var averagesOfFive = [];
+  while (fiveLoop < array.length - 4) {
+    fiveArray = [Number(array[fiveLoop]), Number(array[fiveLoop + 1]), Number(array[fiveLoop + 2]), Number(array[fiveLoop + 3]), Number(array[fiveLoop + 4])];
+    averagesOfFive.push(averageOfArray(fiveArray));
+    fiveLoop = fiveLoop + 1;
+  }
+  return(averagesOfFive);
 }
 
 function addToSolvesDisplay(data) {
