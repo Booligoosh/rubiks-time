@@ -209,10 +209,17 @@ function moreStats() {
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
-  var averagesOfFive = averageOfFivesOfArray(solves);
   document.getElementById("average").innerHTML = "Average: " + clockify(averageOfArray(solves));
-  document.getElementById("currentaverageof5").innerHTML = "Current average of 5: " + clockify(averagesOfFive[averagesOfFive.length - 1]);
-  document.getElementById("bestaverageof5").innerHTML = "Best average of 5: " + clockify(Array.min(averagesOfFive));
+  if (solves.length >= 5) {
+    var averagesOfFive = averageOfFivesOfArray(solves);
+    document.getElementById("currentaverageof5").innerHTML = "Current average of 5: " + clockify(averagesOfFive[averagesOfFive.length - 1]);
+    document.getElementById("bestaverageof5").innerHTML = "Best average of 5: " + clockify(Array.min(averagesOfFive));
+  }
+  if (solves.length >= 12) {
+    var averagesOfTwelve = averageOfTwelvessOfArray(solves);
+    document.getElementById("currentaverageof12").innerHTML = "Current average of 12: " + clockify(averagesOfTwelve[averagesOfTwelve.length - 1]);
+    document.getElementById("bestaverageof12").innerHTML = "Best average of 12: " + clockify(Array.min(averagesOfTwelve));
+  }
   drawChart();
 }
 
@@ -236,6 +243,18 @@ function averageOfFivesOfArray(array) {
     fiveLoop = fiveLoop + 1;
   }
   return(averagesOfFive);
+}
+
+function averageOfTwelvesOfArray(array) {
+  var twelveArray = 0;
+  var twelveLoop = 0;
+  var averagesOfTwelve = [];
+  while (twelveLoop < array.length - 4) {
+    twelveArray = [Number(array[twelveLoop]), Number(array[twelveLoop + 1]), Number(array[twelveLoop + 2]), Number(array[twelveLoop + 3]), Number(array[twelveLoop + 4]), Number(array[twelveLoop + 5]), Number(array[twelveLoop + 6]), Number(array[twelveLoop + 7]), Number(array[twelveLoop + 8]), Number(array[twelveLoop + 9]), Number(array[twelveLoop + 10]), Number(array[twelveLoop + 11])];
+    averagesOfTwelve.push(averageOfArray(twelveArray));
+    twelveLoop = twelveLoop + 1;
+  }
+  return(averagesOfTwelve);
 }
 
 function addToSolvesDisplay(data) {
