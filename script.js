@@ -216,7 +216,7 @@ function moreStats() {
     document.getElementById("bestaverageof5").innerHTML = "Best average of 5: " + clockify(Array.min(averagesOfFive));
   }
   if (solves.length >= 12) {
-    var averagesOfTwelve = averageOfTwelvessOfArray(solves);
+    var averagesOfTwelve = averageOfTwelvesOfArray(solves);
     document.getElementById("currentaverageof12").innerHTML = "Current average of 12: " + clockify(averagesOfTwelve[averagesOfTwelve.length - 1]);
     document.getElementById("bestaverageof12").innerHTML = "Best average of 12: " + clockify(Array.min(averagesOfTwelve));
   }
