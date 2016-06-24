@@ -313,6 +313,7 @@ function backgroundChange() {
 function deleteSolve(index) {
   solves.splice(index, 1);
   updateCookies();
+  solvesList();
 }
 
 function updateCookies() {
