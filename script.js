@@ -259,6 +259,12 @@ function averageOfTwelvesOfArray(array) {
 
 function addToSolvesDisplay(data) {
   var h2 = document.createElement("h2");
+  var att1 = document.createAttribute("id");
+  att1.value = "solve" + document.getElementsByTagName("h2").length;
+  h2.setAttributeNode(att1);
+  var att2 = document.createAttribute("onclick");
+  att2.value = "deleteSolve(" + document.getElementsByTagName("h2").length + ")";
+  h2.setAttributeNode(att2);
   var t = document.createTextNode(data);
   h2.appendChild(t);
   document.getElementById("solveslist").appendChild(h2);
