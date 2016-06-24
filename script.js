@@ -311,7 +311,7 @@ function backgroundChange() {
 }
 
 function deleteSolve(index) {
-  var r = confirm("You have chosen to delete solve #" + Number(index + 1) + " - " + clockify(solves[index]) + "\nAre you sure you want to delete it?");
+  var r = confirm("You have chosen to delete solve " + Number(index + 1) + " - " + clockify(solves[index]) + "\nAre you sure you want to delete it?");
   if (r == true) {
     solves.splice(index, 1);
     updateCookies();
