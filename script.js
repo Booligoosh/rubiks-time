@@ -165,28 +165,32 @@ function spaceUp() {
 }
 
 function gearClicked() {
-  if (document.getElementById("screen3").style.display === "none") {
-    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/left.svg";
-    showScreen(3);
-  }
-  else {
-    document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/gear.svg";
-    showScreen(prevScreen);
+  if (document.getElementById("screen4").style.display === "none" && document.getElementById("screen5").style.display === "none" && document.getElementById("screen6").style.display === "none") {
+    if (document.getElementById("screen3").style.display === "none") {
+      document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/left.svg";
+      showScreen(3);
+    }
+    else {
+      document.getElementById("gear").src = "https://booligoosh.github.io/rubiks-time/gear.svg";
+      showScreen(prevScreen);
+    }
   }
 }
 
 function statsClicked() {
-  if (document.getElementById("screen4").style.display === "none" && document.getElementById("screen5").style.display === "none" && document.getElementById("screen6").style.display === "none") {
-    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg";
-    screenBeforeStats = currentScreen;
-    showScreen(4);
-  }
-  else if (document.getElementById("screen4").style.display === "none") {
-    showScreen(4);
-  }
-  else {
-    document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/stats.svg";
-    showScreen(screenBeforeStats);
+  if (document.getElementById("screen3").style.display === "none") {
+    if (document.getElementById("screen4").style.display === "none" && document.getElementById("screen5").style.display === "none" && document.getElementById("screen6").style.display === "none") {
+      document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/left.svg";
+      screenBeforeStats = currentScreen;
+      showScreen(4);
+    }
+    else if (document.getElementById("screen4").style.display === "none") {
+      showScreen(4);
+    }
+    else {
+      document.getElementById("stats").src = "https://booligoosh.github.io/rubiks-time/stats.svg";
+      showScreen(screenBeforeStats);
+    }
   }
 }
 
