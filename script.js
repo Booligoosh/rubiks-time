@@ -310,6 +310,11 @@ function backgroundChange() {
   document.getElementById("color").innerHTML = backgroundName;
 }
 
+function deleteSolve(index) {
+  solves.splice(index, 1);
+  updateCookies();
+}
+
 function updateCookies() {
     document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
 }
