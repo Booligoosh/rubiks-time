@@ -41,12 +41,12 @@ h2 {
   top: 1em;
   left: 1em;
 }
-span h2 {
+.combo-span h2 {
   display: inline;
   padding: 0.25em;
   margin-bottom: 0;
 }
-span img {
+.combo-span img {
   height: 2.5em;
   width: auto;
 }
