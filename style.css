@@ -50,6 +50,13 @@ h2 {
   height: 2.5em;
   width: auto;
 }
+#solveslist h2 {
+  transition: all, 0.25s;
+}
+#solveslist h2:hover {
+  color: rgba(255,0,0,0.25);
+  text-decoration: line-through;
+}
 hr {
   border-color: white;
   margin-left: 5em;
