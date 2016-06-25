@@ -264,7 +264,7 @@ function averageOfTwelvesOfArray(array) {
   var twelveArray = 0;
   var twelveLoop = 0;
   var averagesOfTwelve = [];
-  while (twelveLoop < array.length - 4) {
+  while (twelveLoop < array.length - 11) {
     twelveArray = [Number(array[twelveLoop]), Number(array[twelveLoop + 1]), Number(array[twelveLoop + 2]), Number(array[twelveLoop + 3]), Number(array[twelveLoop + 4]), Number(array[twelveLoop + 5]), Number(array[twelveLoop + 6]), Number(array[twelveLoop + 7]), Number(array[twelveLoop + 8]), Number(array[twelveLoop + 9]), Number(array[twelveLoop + 10]), Number(array[twelveLoop + 11])];
     averagesOfTwelve.push(averageOfArray(twelveArray));
     twelveLoop = twelveLoop + 1;
