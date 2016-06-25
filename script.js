@@ -224,16 +224,16 @@ function moreStats() {
     chartLoop = chartLoop + 1;
   }
   showScreen(6);
-  document.getElementById("average").innerHTML = "Average: " + clockify(averageOfArray(solves));
+  document.getElementById("average").innerHTML = "Average - " + clockify(averageOfArray(solves));
   if (solves.length >= 5) {
     var averagesOfFive = averageOfFivesOfArray(solves);
-    document.getElementById("currentaverageof5").innerHTML = "Current average of 5: " + clockify(averagesOfFive[averagesOfFive.length - 1]);
-    document.getElementById("bestaverageof5").innerHTML = "Best average of 5: " + clockify(Array.min(averagesOfFive));
+    document.getElementById("currentaverageof5").innerHTML = "Current average of 5 - " + clockify(averagesOfFive[averagesOfFive.length - 1]);
+    document.getElementById("bestaverageof5").innerHTML = "Best average of 5 - " + clockify(Array.min(averagesOfFive));
   }
   if (solves.length >= 12) {
     var averagesOfTwelve = averageOfTwelvesOfArray(solves);
-    document.getElementById("currentaverageof12").innerHTML = "Current average of 12: " + clockify(averagesOfTwelve[averagesOfTwelve.length - 1]);
-    document.getElementById("bestaverageof12").innerHTML = "Best average of 12: " + clockify(Array.min(averagesOfTwelve));
+    document.getElementById("currentaverageof12").innerHTML = "Current average of 12 - " + clockify(averagesOfTwelve[averagesOfTwelve.length - 1]);
+    document.getElementById("bestaverageof12").innerHTML = "Best average of 12 - " + clockify(Array.min(averagesOfTwelve));
   }
   drawChart();
 }
