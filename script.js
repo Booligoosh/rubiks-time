@@ -1,4 +1,4 @@
-if (localStorage.length === 0) {
+if (localStorage.rubiks == undefined) {
   var startDown = false;
   var startUp = false;
   var inspectionStarted = false;
@@ -27,6 +27,7 @@ if (localStorage.length === 0) {
   var solvesListLoop;
   var chartLoop;
   var chartArray;
+  localStorage.rubiks = true;
 }
 else {
   //Normal init with localStorage vars missing
@@ -57,11 +58,11 @@ else {
   var chartArray;
   //localStorage vars
   if (typeof(Storage) !== "undefined") {
-    var inspectionStartOn = Number(localStorage.sInspectionStartOn);
+    var inspectionStartOn = Number(localStorage.rubiksInspectionStartOn);
     document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
-    var backgroundNum = Number(localStorage.sBackgroundNum);
+    var backgroundNum = Number(localStorage.rubiksBackgroundNum);
     backgroundChange();
-    var solves = localStorage.sSolves.split(',');
+    var solves = localStorage.rubiksSolves.split(',');
   }
   else {
     var cookiesList = document.cookie.split("|");
@@ -337,9 +338,9 @@ function deleteSolve(index) {
 
 function updateStorage() {
     if (typeof(Storage) !== "undefined") {
-      localStorage.sInspectionStartOn = inspectionStartOn;
-      localStorage.sBackgroundNum = backgroundNum;
-      localStorage.sSolves = solves.join();
+      localStorage.rubiksInspectionStartOn = inspectionStartOn;
+      localStorage.rubiksBackgroundNum = backgroundNum;
+      localStorage.rubiksSolves = solves.join();
     } else {
       document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
     }
