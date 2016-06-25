@@ -1,4 +1,4 @@
-if (document.cookie === "") {
+if (localStorage.length === 0) {
   var startDown = false;
   var startUp = false;
   var inspectionStarted = false;
@@ -29,7 +29,7 @@ if (document.cookie === "") {
   var chartArray;
 }
 else {
-  //Normal init with cookie vars missing
+  //Normal init with localStorage vars missing
   var startDown = false;
   var startUp = false;
   var inspectionStarted = false;
@@ -55,13 +55,23 @@ else {
   var solvesListLoop;
   var chartLoop;
   var chartArray;
-  //Cookie vars
-  var cookiesList = document.cookie.split("|");
-  var inspectionStartOn = Number(cookiesList[1]);
-  document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
-  var backgroundNum = Number(cookiesList[2]);
-  backgroundChange();
-  var solves = cookiesList[3].split(',');
+  //localStorage vars
+  if (typeof(Storage) !== "undefined") {
+    var inspectionStartOn = Number(localStorage.sInspectionStartOn);
+    document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+    var backgroundNum = Number(localStorage.sBackgroundNum);
+    backgroundChange();
+    var solves = localStorage.sSolves.split(',');
+  }
+  else {
+    var cookiesList = document.cookie.split("|");
+    var inspectionStartOn = Number(cookiesList[1]);
+    document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
+    var backgroundNum = Number(cookiesList[2]);
+    backgroundChange();
+    var solves = cookiesList[3].split(',');
+  }
+
 }
 
 Array.min = function( array ){
@@ -108,7 +118,7 @@ function startSolve() {
 function stopSolve() {
   clearTimeout(solveTimer);
   solves.push(solve);
-  updateCookies();
+  updateStorage();
   document.getElementById("screen2sub").style.display = "block";
   document.getElementById("screen2sub").innerHTML = "Ready";
   document.getElementById("numbers").innerHTML = clockify(solves[solves.length - 1]);
@@ -278,14 +288,14 @@ function addToSolvesDisplay(data) {
 function iPlus() {
   inspectionStartOn = inspectionStartOn + 1;
   document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
-  updateCookies();
+  updateStorage();
 }
 
 function iMinus() {
   if (inspectionStartOn != 0) {
     inspectionStartOn = inspectionStartOn - 1;
     document.getElementById("inspection").innerHTML = inspectionStartOn.toString();
-    updateCookies();
+    updateStorage();
   }
 }
 
@@ -295,7 +305,7 @@ function cLeft() {
     backgroundNum = 5;
   }
   backgroundChange();
-  updateCookies();
+  updateStorage();
 }
 
 function cRight() {
@@ -304,7 +314,7 @@ function cRight() {
     backgroundNum = 0;
   }
   backgroundChange();
-  updateCookies();
+  updateStorage();
 }
 
 function backgroundChange() {
@@ -318,15 +328,22 @@ function deleteSolve(index) {
   var r = confirm("You have chosen to delete solve " + Number(index + 1) + " - " + clockify(solves[index]) + "\nAre you sure you want to delete it?");
   if (r == true) {
     solves.splice(index, 1);
-    updateCookies();
+    updateStorage();
     solvesList();
   } else {
     
   }
 }
 
-function updateCookies() {
-    document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
+function updateStorage() {
+    if (typeof(Storage) !== "undefined") {
+      localStorage.sInspectionStartOn = inspectionStartOn;
+      localStorage.sBackgroundNum = backgroundNum;
+      localStorage.sSolves = solves.join();
+    } else {
+      document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
+    }
+    
 }
 
 function newSolve() {
