@@ -146,31 +146,35 @@ function clockify(num) {
 }
 
 function spaceDown() {
-  if (event.keyCode === 32) {
-    if (startDown === false) {
-      showScreen(2);
-      document.getElementById("screen2sub").style.display = "none";
-      document.getElementById("numbers").innerHTML = "Ready";
-      startDown = true;
-    }
-    if (solveStarted === true) {
-      stopSolve();
-    }
-    if (inspectionStarted === true && solveStarted === false) {
-      solve = 0;
-      solveStarted = true;
-      startSolve();
-      clearTimeout(inspectionTimer);
+  if (currentScreen === 1 || currentScreen === 2) {
+    if (event.keyCode === 32) {
+      if (startDown === false) {
+        showScreen(2);
+        document.getElementById("screen2sub").style.display = "none";
+        document.getElementById("numbers").innerHTML = "Ready";
+        startDown = true;
+      }
+      if (solveStarted === true) {
+        stopSolve();
+      }
+      if (inspectionStarted === true && solveStarted === false) {
+        solve = 0;
+        solveStarted = true;
+        startSolve();
+        clearTimeout(inspectionTimer);
+      }
     }
   }
 }
 
 function spaceUp() {
-  if (event.keyCode === 32) {
-    if (startDown === true && inspectionStarted === false) {
-      inspection = inspectionStartOn + 1;
-      inspectionStarted = true;
-      startInspection();
+  if (currentScreen === 1 || currentScreen === 2) {
+    if (event.keyCode === 32) {
+      if (startDown === true && inspectionStarted === false) {
+        inspection = inspectionStartOn + 1;
+        inspectionStarted = true;
+        startInspection();
+      }
     }
   }
 }
