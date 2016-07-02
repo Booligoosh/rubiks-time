@@ -90,10 +90,10 @@ function showScreen(num) {
   document.getElementById("screen6").style.display = "none";
   document.getElementById("screen" + num).style.display = "block";
   if (num === 1 || num === 2) {
-    document.getElementById("scramble").style.display = "block";
+    document.getElementById("scramble").style = "-webkit-filter: opacity(100); filter: opacity(100);";
   }
   else {
-    document.getElementById("scramble").style.display = "none;"
+    document.getElementById("scramble").style = "-webkit-filter: opacity(0); filter: opacity(0);";
   }
   prevScreen = currentScreen;
   currentScreen = num;
