@@ -75,6 +75,8 @@ else {
 
 }
 
+document.getElementById("scramble").innerHTML = scramblers["333"].getRandomScramble().scramble_string;
+
 Array.min = function( array ){
     return Math.min.apply( Math, array );
 };
