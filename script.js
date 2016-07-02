@@ -87,6 +87,12 @@ function showScreen(num) {
   document.getElementById("screen5").style.display = "none";
   document.getElementById("screen6").style.display = "none";
   document.getElementById("screen" + num).style.display = "block";
+  if (num === 1 || num === 2) {
+    document.getElementById("scramble").style.display = "block";
+  }
+  else {
+    document.getElementById("scramble").style.display = "none;"
+  }
   prevScreen = currentScreen;
   currentScreen = num;
 }
@@ -356,6 +362,7 @@ function newSolve() {
   startUp = false;
   inspectionStarted = false;
   solveStarted = false;
+  document.getElementById("scramble").innerHTML = scramblers["333"].getRandomScramble().scramble_string;
 }
 
 //GOOGLE CHARTS SCRIPTS
