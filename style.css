@@ -29,6 +29,14 @@ h6 {
   margin-bottom: 0.5em;
   font-weight: 100;
 }
+#scramble {
+  font-size: 2em;
+  font-weight: 100;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
 #numbers {
   margin-top: 1.5em;
   margin-bottom: 0;
