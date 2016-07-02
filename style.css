@@ -41,6 +41,7 @@ h6 {
   z-index: -1000;
   -webkit-filter: opacity(100);
   filter: opacity(100);
+  transition: all,0.15s;
 }
 #numbers {
   margin-top: 1.5em;
