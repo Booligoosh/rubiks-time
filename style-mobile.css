@@ -1,0 +1,120 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+body {
+  margin: 0px;
+  background-attachment: fixed;
+  background-image: linear-gradient( rgba(229, 57, 53, 0.75), rgba(229, 57, 53, 0.75) ), url('https://booligoosh.github.io/rubiks-time/beach.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+}
+h1 {
+  margin-top: 2em;
+  margin-bottom: 0;
+  font-size: 15em;
+  font-weight: 100;
+}
+h2 {
+  font-size: 9em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 100;
+}
+h6 {
+  font-size: 5em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 100;
+}
+#numbers {
+  margin-top: 2.5em;
+  margin-bottom: 0;
+  font-size: 15em;
+  font-weight: 100;
+}
+#gear {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+#stats {
+  width: 32px;
+  height: auto;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+.combo-span h2 {
+  display: inline;
+  padding: 0.25em;
+  margin-bottom: 0;
+}
+.combo-span img {
+  height: 2.5em;
+  width: auto;
+}
+#solveslist h6 {
+  transition: all, 0.25s;
+}
+#solveslist h6:hover {
+  color: rgba(255,0,0,0.25);
+  text-decoration: line-through;
+}
+hr {
+  border-color: white;
+  margin-left: 5em;
+  margin-right: 5em;
+  border-style: solid;
+}
+#graph svg rect:nth-child(1) {
+  fill: white;
+}
+#graph svg rect:nth-child(2) {
+  fill: rgba(0,0,0,0);
+}
+#graph svg path {
+  stroke: white;
+}
+#graph svg text {
+  fill: white;
+  font-family: 'Open Sans', sans-serif;
+}
+#graph svg g:nth-child(4) {
+  display: none;
+}
+#graph svg g:nth-child(5) g:nth-child(4) g text {
+  fill: white;
+}
+#graph svg g:nth-child(5) g g rect {
+  fill: white;
+}
+#graph svg g:nth-child(6) text {
+  fill: black;
+}
+#graph svg g:nth-child(6) g g:nth-child(4) {
+  display: block;
+}
+#graph svg g:nth-child(6) g g:nth-child(5) {
+  display: none;
+}
+#screen1 {
+  display: block;
+}
+#screen2 {
+  display: none;
+}
+#screen3 {
+  display: none;
+}
+#screen4 {
+  display: none;
+}
+#screen5 {
+  display: none;
+}
+#screen6 {
+  display: none;
+}
