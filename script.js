@@ -150,7 +150,7 @@ function clockify(num) {
   if (hund.toString().length <  2) {
     hund = "0" + hund;
   }
-  return(min + ":" + sec + ":" + hund);
+  return(min + ":" + sec + "." + hund);
 }
 
 function spaceDown() {
