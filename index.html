@@ -4,21 +4,21 @@
     <script type="text/javascript">
     <!--
       if (screen.width <= 699) {
-      document.location = "https://booligoosh.github.io/rubiks-time/mobile.html";
+      document.location = "mobile.html";
       }
     //-->
     </script>
     <title>Rubik's Time</title>
-    <link rel="stylesheet" type="text/css" href="https://booligoosh.github.io/rubiks-time/style.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="https://booligoosh.github.io/rubiks-time/z-icon-57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://booligoosh.github.io/rubiks-time/z-icon-72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://booligoosh.github.io/rubiks-time/z-icon-114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://booligoosh.github.io/rubiks-time/z-icon-144.png">
-    <link rel="icon" type="image/png" href="https://booligoosh.github.io/rubiks-time/z-favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="z-icon-57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="z-icon-72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="z-icon-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="z-icon-144.png">
+    <link rel="icon" type="image/png" href="z-favicon.png">
   </head>
   <body id="body" onkeydown="spaceDown()" onkeyup="spaceUp()">
-    <img id="gear" onclick="gearClicked()" src="https://booligoosh.github.io/rubiks-time/gear.svg">
-    <img id="stats" onclick="statsClicked()" src="https://booligoosh.github.io/rubiks-time/stats.svg">
+    <img id="gear" onclick="gearClicked()" src="gear.svg">
+    <img id="stats" onclick="statsClicked()" src="stats.svg">
     <h5 id="scramble" style="-webkit-filter: opacity(100); filter: opacity(100);">Loading...</h5>
     <div id="screen1" style="display: block;">
       <h1>Rubik's Time</h1>
@@ -31,10 +31,10 @@
     <div id="screen3" style="display: none;">
       <h1>Settings</h1>
       <h2>Inspection time (seconds)</h2>
-      <span class="combo-span" id="inspectionspan"><img src="https://booligoosh.github.io/rubiks-time/plus.svg" onclick="iPlus()"><h2 id="inspection">15</h2><img src="https://booligoosh.github.io/rubiks-time/minus.svg" onclick="iMinus()"></span>
+      <span class="combo-span" id="inspectionspan"><img src="plus.svg" onclick="iPlus()"><h2 id="inspection">15</h2><img src="minus.svg" onclick="iMinus()"></span>
       <hr>
       <h2>Color</h2>
-      <span class="combo-span" id="colorspan"><img src="https://booligoosh.github.io/rubiks-time/left.svg" onclick="cLeft()"><h2 id="color">Red</h2><img src="https://booligoosh.github.io/rubiks-time/right.svg" onclick="cRight()"></span>
+      <span class="combo-span" id="colorspan"><img src="left.svg" onclick="cLeft()"><h2 id="color">Red</h2><img src="right.svg" onclick="cRight()"></span>
     </div>
     <div id="screen4" style="display: none;">
       <h1>Stats</h1>
@@ -63,13 +63,13 @@
       <hr>
       <h2 id="bestaverageof12"></h2>
     </div>
-    <script src="https://booligoosh.github.io/rubiks-time/scramble_333.min.js"></script>
+    <script src="scramble_333.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
     </script>
-    <script src="https://booligoosh.github.io/rubiks-time/script.js"></script>
+    <script src="script.js"></script>
     <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
 var sc_project=11021926; 
