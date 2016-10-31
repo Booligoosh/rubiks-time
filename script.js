@@ -27,6 +27,7 @@ if (localStorage.rubiks == undefined) {
   var solvesListLoop;
   var chartLoop;
   var chartArray;
+  updateStorage();
   localStorage.rubiks = true;
 }
 else {
