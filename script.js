@@ -353,9 +353,7 @@ function updateStorage() {
     if (typeof(Storage) !== "undefined") {
       localStorage.rubiksInspectionStartOn = inspectionStartOn;
       localStorage.rubiksBackgroundNum = backgroundNum;
-      if (solves.length >= 1) {
-        localStorage.rubiksSolves = solves.join();
-      }
+      localStorage.rubiksSolves = solves.join();
     } else {
       document.cookie = "cookies= |" + inspectionStartOn + "|" + backgroundNum + "|" + solves.join();
     }
