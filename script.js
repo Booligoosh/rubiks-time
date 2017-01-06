@@ -126,14 +126,14 @@ function startSolve() {
 }
 
 function updateClockMidSolve() {
-  solve = (new Date().getTime()) - startDate;
+  solve = ((new Date().getTime()) - startDate)/solveInterval;
   document.getElementById("numbers").innerHTML = clockify(solve);
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
 function stopSolve() {
   clearTimeout(solveTimer);
-  solve = (new Date().getTime()) - startDate;
+  solve = ((new Date().getTime()) - startDate)/solveInterval;
   solves.push(solve);
   updateStorage();
   document.getElementById("screen2sub").style.display = "block";
