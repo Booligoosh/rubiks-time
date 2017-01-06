@@ -228,10 +228,8 @@ function statsClicked() {
 
 function solvesList() {
   document.getElementById("solveslist").innerHTML = "";
-  solvesListLoop = -1;
-  while (solvesListLoop < solves.length - 1) {
-    solvesListLoop = solvesListLoop + 1;
-    addToSolvesDisplay(clockify(solves[solvesListLoop]));
+  for (var i = solves.length - 1; i >= 0 ; i++) {
+    addToSolvesDisplay(clockify(solves[i]));
   }
   showScreen(5);
 }
