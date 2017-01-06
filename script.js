@@ -27,6 +27,7 @@ if (localStorage.rubiks == undefined) {
   var solvesListLoop;
   var chartLoop;
   var chartArray;
+  var startDate;
   updateStorage();
   localStorage.rubiks = true;
 }
@@ -57,6 +58,7 @@ else {
   var solvesListLoop;
   var chartLoop;
   var chartArray;
+  var startDate;
   //localStorage vars
   if (typeof(Storage) !== "undefined") {
     var inspectionStartOn = Number(localStorage.rubiksInspectionStartOn);
@@ -120,13 +122,18 @@ function stopInspection() {
 function startSolve() {
   clearTimeout(inspectionTimer);
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
-  solve = solve + 1;
+  startDate = new Date().getTime();
+}
+
+function updateClockMidSolve() {
+  solve = (new Date().getTime()) - startDate;
   document.getElementById("numbers").innerHTML = clockify(solve);
   solveTimer = setTimeout(startSolve, solveInterval);
 }
 
 function stopSolve() {
   clearTimeout(solveTimer);
+  solve = (new Date().getTime()) - startDate;
   solves.push(solve);
   updateStorage();
   document.getElementById("screen2sub").style.display = "block";
