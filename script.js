@@ -292,12 +292,13 @@ function averageOfTwelvesOfArray(array) {
 }
 
 function addToSolvesDisplay(data) {
+  var itemNum = solves.length - document.getElementsByTagName("h6").length;
   var h6 = document.createElement("h6");
   var att1 = document.createAttribute("id");
-  att1.value = "solve" + document.getElementsByTagName("h6").length;
+  att1.value = "solve" + itemNum;
   h6.setAttributeNode(att1);
   var att2 = document.createAttribute("onclick");
-  att2.value = "deleteSolve(" + document.getElementsByTagName("h6").length + ")";
+  att2.value = "deleteSolve(" + itemNum + ")";
   h6.setAttributeNode(att2);
   var t = document.createTextNode(data);
   h6.appendChild(t);
