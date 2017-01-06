@@ -123,12 +123,13 @@ function startSolve() {
   clearTimeout(inspectionTimer);
   solveInterval = 10;  // 10 thousandths of a second (1 hundredth)
   startDate = new Date().getTime();
+  updateClockMidSolve();
 }
 
 function updateClockMidSolve() {
   solve = ((new Date().getTime()) - startDate)/solveInterval;
   document.getElementById("numbers").innerHTML = clockify(solve);
-  solveTimer = setTimeout(startSolve, solveInterval);
+  solveTimer = setTimeout(updateClockMidSolve, solveInterval);
 }
 
 function stopSolve() {
