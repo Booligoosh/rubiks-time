@@ -228,7 +228,7 @@ function statsClicked() {
 
 function solvesList() {
   document.getElementById("solveslist").innerHTML = "";
-  for (var i = solves.length - 1; i >= 0 ; i++) {
+  for (var i = solves.length - 1; i >= 0 ; i--) {
     addToSolvesDisplay(clockify(solves[i]));
   }
   showScreen(5);
