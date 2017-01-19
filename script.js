@@ -268,27 +268,16 @@ function averageOfArray(array) {
 }
 
 function averageOfFivesOfArray(array) {
-  var fiveArray = 0;
+  var newArray = [];
   var fiveLoop = 0;
   var averagesOfFive = [];
-  while (fiveLoop < array.length - 4) {
-    fiveArray = [Number(array[fiveLoop]), Number(array[fiveLoop + 1]), Number(array[fiveLoop + 2]), Number(array[fiveLoop + 3]), Number(array[fiveLoop + 4])];
-    averagesOfFive.push(averageOfArray(fiveArray));
-    fiveLoop = fiveLoop + 1;
+  for (var i = 0; i < array.length - 4; i++) {
+    for (var l = 0; l < 5; l++) {
+      newArray.push(Number(array[i + l]));
+    }
+    averagesOfFive.push(averageOfArray(i));
   }
   return(averagesOfFive);
-}
-
-function averageOfTwelvesOfArray(array) {
-  var twelveArray = 0;
-  var twelveLoop = 0;
-  var averagesOfTwelve = [];
-  while (twelveLoop < array.length - 11) {
-    twelveArray = [Number(array[twelveLoop]), Number(array[twelveLoop + 1]), Number(array[twelveLoop + 2]), Number(array[twelveLoop + 3]), Number(array[twelveLoop + 4]), Number(array[twelveLoop + 5]), Number(array[twelveLoop + 6]), Number(array[twelveLoop + 7]), Number(array[twelveLoop + 8]), Number(array[twelveLoop + 9]), Number(array[twelveLoop + 10]), Number(array[twelveLoop + 11])];
-    averagesOfTwelve.push(averageOfArray(twelveArray));
-    twelveLoop = twelveLoop + 1;
-  }
-  return(averagesOfTwelve);
 }
 
 function addToSolvesDisplay(data) {
